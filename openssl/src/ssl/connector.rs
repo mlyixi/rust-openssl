@@ -89,8 +89,8 @@ impl SslConnector {
     pub fn configure(&self) -> Result<ConnectConfiguration, ErrorStack> {
         Ssl::new(&self.0).map(|ssl| ConnectConfiguration {
             ssl,
-            sni: true,
-            verify_hostname: true,
+            sni: false,
+            verify_hostname: false,
         })
     }
 
